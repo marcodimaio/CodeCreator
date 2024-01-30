@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+	<Properties>
+		<Property name="log.path">${log.path}</Property>
+		<Property name="archive">${log.path}/archive</Property>
+		<Property name="filename">capgemini-archetype</Property>
+	</Properties>
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT">
+			<PatternLayout>
+				<pattern>
+					[%-5level] %d{dd-MM-yyyy HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+				</pattern>
+			</PatternLayout>
+		</Console>
+		<RollingFile name="RollingFileAppender" fileName="${log.path}/${filename}.log"
+			filePattern="${archive}/${filename}.log.%d{dd-MM-yyyy-hh-mm}.gz">
+			<PatternLayout
+				pattern="[%-5level] %d{dd-MM-yyyy HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
+			<Policies>
+				<!-- Specifica che il file deve girare ogni volta che cambia il giorno -->
+				<TimeBasedTriggeringPolicy />
+				<!-- Specifica che il file deve girare ogni volta che arriva a 10 MB -->
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<!-- Numero di file da mantenere come history -->
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+ 	 	<Logger name="it.capgemini.archetype" level="info" additivity="false">
+			<AppenderRef ref="ConsoleAppender" level="info"/>
+			<AppenderRef ref="RollingFileAppender" level="info"/>
+		</Logger>
+		<Root>
+			<AppenderRef ref="ConsoleAppender" level="info"/>
+ 			<AppenderRef ref="RollingFileAppender" level="info"/>
+		</Root>
+	</Loggers>
+</Configuration>
