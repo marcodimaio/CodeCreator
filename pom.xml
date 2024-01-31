@@ -130,6 +130,6 @@
   </build>
   <modules>	
     <module>capgemini-archetype-generatesource</module> 
-    <module>capgemini-archetype-boot</module>    
+    <module>capgemini-archetype-srv</module>
   </modules>
 </project>
