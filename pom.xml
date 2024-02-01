@@ -1,135 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  	
-  <modelVersion>4.0.0</modelVersion>
-  	
-  <groupId>it.capgemini</groupId>
-  	
-  <artifactId>capgemini-archetype</artifactId>
-  	
-  <version>1.17.0-SNAPSHOT</version>
-  	
-  <packaging>pom</packaging>
-  	
-  <name>capgemini-archetype</name>
-  	
-  <description>Archetipo per creare un progetto standard in java 1.8</description>
-  	
-  <properties>
-    		
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    		
-    <java.version>17</java.version>
-    		
-    <oracle.version>12.2.0.1</oracle.version>
-    		
-    <org.apache.maven.plugins.version>3.7.0</org.apache.maven.plugins.version>
-    		
-    <junit.version>4.12</junit.version>
-    		
-    <org.apache.logging.log4j.version>2.8.2</org.apache.logging.log4j.version>
-    		
-    <commons.lang3.version>3.14.0</commons.lang3.version>
-    		
-    <commons-collections.version>4.4</commons-collections.version>
-    		
-    <commons-beanutils.version>1.9.4</commons-beanutils.version>
-    	
-  </properties>
-  	
-  <dependencyManagement>
-    		
-    <dependencies>
-      			
-      <dependency>
-        				
-        <groupId>com.oracle</groupId>
-        				
-        <artifactId>ojdbc8</artifactId>
-        				
-        <version>${oracle.version}</version>
-        			
-      </dependency>
-      			
-      <dependency>
-        				
-        <groupId>org.apache.commons</groupId>
-        				
-        <artifactId>commons-collections4</artifactId>
-        				
-        <version>${commons-collections.version}</version>
-        			
-      </dependency>
-      			
-      <dependency>
-        				
-        <groupId>org.apache.commons</groupId>
-        				
-        <artifactId>commons-lang3</artifactId>
-        				
-        <version>${commons.lang3.version}</version>
-        			
-      </dependency>
-      			
-      <dependency>
-        				
-        <groupId>commons-beanutils</groupId>
-        				
-        <artifactId>commons-beanutils</artifactId>
-        				
-        <version>${commons-beanutils.version}</version>
-        			
-      </dependency>
-      			
-      <dependency>
-        				
-        <groupId>org.apache.logging.log4j</groupId>
-        				
-        <artifactId>log4j-slf4j-impl</artifactId>
-        				
-        <version>${org.apache.logging.log4j.version}</version>
-        			
-      </dependency>
-      			
-      <dependency>
-        				
-        <groupId>org.apache.logging.log4j</groupId>
-        				
-        <artifactId>log4j-core</artifactId>
-        				
-        <version>${org.apache.logging.log4j.version}</version>
-        			
-      </dependency>
-      			
-      <dependency>
-        				
-        <groupId>junit</groupId>
-        				
-        <artifactId>junit</artifactId>
-        				
-        <version>${junit.version}</version>
-        			
-      </dependency>
 
-    </dependencies>
-  </dependencyManagement>
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>${org.apache.maven.plugins.version}</version>        					
-          <configuration>           						
-            <source>${java.version}</source>           						
-            <target>${java.version}</target>          					
-          </configuration>         				
-        </plugin>       			
-      </plugins>	
-    </pluginManagement>
-  </build>
-  <modules>	
-    <module>capgemini-archetype-generatesource</module> 
-    <module>capgemini-archetype-boot</module>    
-  </modules>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>it.capgemini</groupId>
+	<artifactId>capgemini-archetype</artifactId>
+	<version>1.17.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>capgemini-archetype</name>
+	<description>Archetipo per creare un progetto standard in java</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>17</java.version>
+		<org.apache.maven.plugins.version>3.7.0</org.apache.maven.plugins.version>
+		<junit.version>4.12</junit.version>
+		<org.apache.logging.log4j.version>2.8.2</org.apache.logging.log4j.version>
+		<commons.lang3.version>3.14.0</commons.lang3.version>
+		<commons-collections.version>4.4</commons-collections.version>
+		<commons-beanutils.version>1.9.4</commons-beanutils.version>
+
+	</properties>
+
+	<dependencyManagement>
+
+		<dependencies>
+			<dependency>
+				<!-- Import dependency management from Spring Boot -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>3.2.2</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>		
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-collections4</artifactId>
+				<version>${commons-collections.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons.lang3.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>${commons-beanutils.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-slf4j-impl</artifactId>
+				<version>${org.apache.logging.log4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${org.apache.logging.log4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${org.apache.maven.plugins.version}</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<modules>
+		<module>capgemini-archetype-generatesource</module>
+		<module>capgemini-archetype-srv</module>
+	</modules>
 </project>

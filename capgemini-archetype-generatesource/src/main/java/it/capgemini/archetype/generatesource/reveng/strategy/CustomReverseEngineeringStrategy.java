@@ -131,19 +131,19 @@ public class CustomReverseEngineeringStrategy extends DelegatingReverseEngineeri
 
 	@Override
 	public boolean excludeColumn(TableIdentifier identifier, String columnName) {
-		if (columnName.equals("COD_PGM_ULT_MOV")) {
-			System.out.println("Colonna esclusa dalla generazione: " + columnName);
-
-			return true;
-		} else if (columnName.equals("COD_UTE_ULT_MOV")) {
-			System.out.println("Colonna esclusa dalla generazione: " + columnName);
-
-			return true;
-		} else if (columnName.equals("DAT_ORA_ULT_MOV")) {
-			System.out.println("Colonna esclusa dalla generazione: " + columnName);
-
-			return true;
-		}
+//		if (columnName.equals("COD_PGM_ULT_MOV")) {
+//			System.out.println("Colonna esclusa dalla generazione: " + columnName);
+//
+//			return true;
+//		} else if (columnName.equals("COD_UTE_ULT_MOV")) {
+//			System.out.println("Colonna esclusa dalla generazione: " + columnName);
+//
+//			return true;
+//		} else if (columnName.equals("DAT_ORA_ULT_MOV")) {
+//			System.out.println("Colonna esclusa dalla generazione: " + columnName);
+//
+//			return true;
+//		}
 
 		return false;
 	}
