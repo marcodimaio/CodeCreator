@@ -16,9 +16,9 @@
 		import java.util.List;
 		import java.util.Optional;
 		
-		import org.springframework.domain.Page;
-		import org.springframework.domain.Pageable;	
-		import org.springframework.domain.Sort;
+		import org.springframework.data.domain.Page;
+		import org.springframework.data.domain.Pageable;	
+		import org.springframework.data.domain.Sort;
 	
 		<#assign typeId = pojo.getJavaTypeName(clazz.identifierProperty, jdk5)>
 	

@@ -10,8 +10,8 @@
 		package e il punto e virgola finale -->
 		<#assign entityPackage = pojo.getPackageDeclaration()?replace("package", "")?replace(";", "")>
 	
-		import org.springframework.jpa.repository.JpaRepository;
-		import org.springframework.querydsl.QuerydslPredicateExecutor;
+		import org.springframework.data.jpa.repository.JpaRepository;
+		import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 		import org.springframework.stereotype.Repository;	
 		import ${entityPackage}.${declarationName};
 		

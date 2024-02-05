@@ -15,10 +15,8 @@
 	<properties>
 		<java.version>17</java.version>
 		<com.querydsl.version>5.0.0</com.querydsl.version>
-		<javax.validation.api>2.0.1.Final</javax.validation.api>
-		<hibernate.entitymanager.version>5.6.15.Final</hibernate.entitymanager.version>
 		<hibernate.core.version>6.4.2.Final</hibernate.core.version>
-		<javax.servlet.api>4.0.1</javax.servlet.api>
+		<hibernate-commons-annotations.version>5.1.1.Final</hibernate-commons-annotations.version>
 		<commons.lang3.version>3.14.0</commons.lang3.version>
 		<commons-collections.version>4.4</commons-collections.version>
 		<modelmapper.version>3.2.0</modelmapper.version>
@@ -58,10 +56,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 		<dependency>
@@ -76,28 +70,19 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			<version>${javax.validation.api}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.core.version}</version>
-			<type>pom</type>
+			<groupId>org.hibernate.common</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>${hibernate-commons-annotations.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibernate.entitymanager.version}</version>
 		</dependency>
 
 		<dependency>
@@ -114,7 +99,6 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>${javax.servlet.api}</version>
 		</dependency>
 
 		<dependency>
